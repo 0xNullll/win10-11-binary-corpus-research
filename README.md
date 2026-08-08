@@ -131,6 +131,19 @@ versus record-shaped dicts (few, fixed, meaningful keys) which get literal
 This gives a machine-readable field-by-field description of every output
 file without hand-maintaining documentation as the pipeline evolves.
 
+## A note on this repo
+ 
+Nothing here from scripts, output data, folder layout, README included — was
+built to be a polished, general-purpose release. This is a research
+artifact: what was actually used to produce the paper's data, shared as-is
+for transparency and reproducibility. It was written and organized for one
+person working against one specific corpus, iterated on as the research
+progressed, not engineered or cleaned up for outside use. Expect rough
+edges throughout — inconsistent conventions, minimal validation, hardcoded
+assumptions that held for this corpus specifically, and the occasional odd
+naming choice. If something behaves unexpectedly or looks inconsistent,
+that's the nature of a research artifact rather than a maintained tool.
+
 ## License
 
 Released under the **MIT License**. See [LICENSE](LICENSE) for full text.
