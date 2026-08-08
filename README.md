@@ -2,8 +2,7 @@
 
 Supplementary tools and precomputed data accompanying *"A Corpus-Scale Static
 Analysis of Windows 10/11 System Binaries: Structural Anomalies and
-Cross-Build Differences"* (paper 1 of a planned three-paper series on
-Windows binary analysis).
+Cross-Build Differences"*.
 
 This repo does **not** contain the full corpus. It contains:
 
