@@ -8,7 +8,7 @@ extraction pipeline:
    Characterization and Cross-Build Differences"* — corpus-scale statistics
    (imports, exports, security-relevant characteristics, signature status).
 2. *"Structural Anomalies in a Windows 10/11 System Binary Corpus:
-   Cross-Build Outliers and a \texttt{inpoutx64.sys} Case Study"* —
+   Cross-Build Outliers and a `inpoutx64.sys` Case Study"* —
    structural anomalies, including the unsigned
    Windows 10 cluster, field-level anomalies, and the `inpoutx64.sys` case
    study.
