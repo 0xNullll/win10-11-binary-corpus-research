@@ -1,13 +1,22 @@
 # AXIS Windows Binary Corpus — Tools & Data
 
-Supplementary tools and precomputed data accompanying *"A Corpus-Scale Static
-Analysis of Windows 10/11 System Binaries: Structural Anomalies and
-Cross-Build Differences"*.
+Supplementary tools and precomputed data accompanying a two-paper series on
+Windows 10/11 system binary analysis, both drawn from the same corpus and
+extraction pipeline:
+
+1. *"A Corpus-Scale Static Analysis of Windows 10/11 System Binaries:
+   Characterization and Cross-Build Differences"* — corpus-scale statistics
+   (imports, exports, security-relevant characteristics, signature status).
+2. *"Structural Anomalies in a Windows 10/11 System Binary Corpus:
+   Cross-Build Outliers and a \texttt{inpoutx64.sys} Case Study"* —
+   structural anomalies, including the unsigned
+   Windows 10 cluster, field-level anomalies, and the `inpoutx64.sys` case
+   study.
 
 This repo does **not** contain the full corpus. It contains:
 
 - the scripts used to generate and validate the analysis data (`scripts/`)
-- precomputed output for the two builds studied in the paper (`shared-output/`)
+- precomputed output for the two builds studied in both papers (`shared-output/`)
 - a pointer to the raw corpus, provided separately due to size (`corpus/`)
 
 Everything under `shared-output/` is reproducible from the corpus using the
@@ -40,7 +49,7 @@ scratch.
 
 | Script | Purpose |
 |---|---|
-| `axis_binary_tool_python.py` | Main analysis script. Runs the core corpus analysis behind most of the paper's tables and statistics — imports, exports, security-relevant characteristics, signature status, and the Win10/Win11 comparison. Results are printed directly to the CLI. This is also the script that surfaced `inpoutx64.sys` as an anomaly. Produces more than what made it into the paper — see it for extra characteristics/statistics not covered there. |
+| `axis_binary_tool_python.py` | Main analysis script. Runs the core corpus analysis behind most of Paper 1's tables and statistics — imports, exports, security-relevant characteristics, signature status, and the Win10/Win11 comparison. Results are printed directly to the CLI. This is also the script whose RWX-permission check first surfaced `inpoutx64.sys` as an outlier, which became the central case study of Paper 2. Produces more than what made it into either paper — see it for extra characteristics/statistics not covered in the text. |
 | `axis_binary_tool_python_generator.py` | Interactive generator. Prompts for the Windows version/build/arch to target, then presents a menu (DLL dependency graph / export index / hash index / build all) and writes the corresponding JSON files to `shared-output/<os>/<build>/<arch>/`. No CLI flags — just run it and answer the prompts. |
 | `axis_binary_tool_python_validate_data.py` | Validates an already-generated `binary_paths.json` (no flags, no other input needed — reads it directly). Prints live progress and a summary (total checked / clean / flagged, plus the first 10 flagged entries) to the CLI, and writes the full validation report to JSON. Entries with no problems aren't included in the report. |
 | `axis_binary_tool_python_graph.py` | DLL dependency graph viewer. Run directly (no flags) — it opens an interactive dependency graph in a local web page. |
@@ -135,14 +144,15 @@ file without hand-maintaining documentation as the pipeline evolves.
  
 Nothing here from scripts, output data, folder layout, README included — was
 built to be a polished, general-purpose release. This is a research
-artifact: what was actually used to produce the paper's data, shared as-is
-for transparency and reproducibility. It was written and organized for one
-person working against one specific corpus, iterated on as the research
-progressed, not engineered or cleaned up for outside use. Expect rough
-edges throughout — inconsistent conventions, minimal validation, hardcoded
-assumptions that held for this corpus specifically, and the occasional odd
-naming choice. If something behaves unexpectedly or looks inconsistent,
-that's the nature of a research artifact rather than a maintained tool.
+artifact: what was actually used to produce the data behind both papers,
+shared as-is for transparency and reproducibility. It was written and
+organized for one person working against one specific corpus, iterated on as
+the research progressed, not engineered or cleaned up for outside use.
+Expect rough edges throughout — inconsistent conventions, minimal
+validation, hardcoded assumptions that held for this corpus specifically,
+and the occasional odd naming choice. If something behaves unexpectedly or
+looks inconsistent, that's the nature of a research artifact rather than a
+maintained tool.
 
 ## License
 
