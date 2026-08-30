@@ -242,6 +242,9 @@
     "c:\\windows\\system32\\agentactivationruntimewindows.dll",
     "c:\\windows\\syswow64\\agentactivationruntimewindows.dll"
   ],
+  "agentgovernancecsp.dll": [
+    "c:\\windows\\system32\\agentgovernancecsp.dll"
+  ],
   "agentservice.exe": [
     "c:\\windows\\system32\\agentservice.exe"
   ],
@@ -615,6 +618,10 @@
   "atl100.dll": [
     "c:\\windows\\system32\\atl100.dll",
     "c:\\windows\\syswow64\\atl100.dll"
+  ],
+  "atl110.dll": [
+    "c:\\windows\\system32\\atl110.dll",
+    "c:\\windows\\syswow64\\atl110.dll"
   ],
   "atlthunk.dll": [
     "c:\\windows\\system32\\atlthunk.dll",
@@ -1924,6 +1931,9 @@
     "c:\\windows\\system32\\credwiz.exe",
     "c:\\windows\\syswow64\\credwiz.exe"
   ],
+  "crossdevicevirtualcamerasource.dll": [
+    "c:\\windows\\system32\\crossdevicevirtualcamerasource.dll"
+  ],
   "crypt32.dll": [
     "c:\\windows\\system32\\crypt32.dll",
     "c:\\windows\\syswow64\\crypt32.dll"
@@ -2927,6 +2937,9 @@
   ],
   "dispdiag.exe": [
     "c:\\windows\\system32\\dispdiag.exe"
+  ],
+  "dispdiag2.dll": [
+    "c:\\windows\\system32\\dispdiag2.dll"
   ],
   "dispex.dll": [
     "c:\\windows\\system32\\dispex.dll",
@@ -3993,6 +4006,9 @@
     "c:\\windows\\system32\\fdwsd.dll",
     "c:\\windows\\syswow64\\fdwsd.dll"
   ],
+  "featurestaging-ext-101.dll": [
+    "c:\\windows\\system32\\featurestaging-ext-101.dll"
+  ],
   "feclient.dll": [
     "c:\\windows\\system32\\feclient.dll",
     "c:\\windows\\syswow64\\feclient.dll"
@@ -4363,8 +4379,8 @@
     "c:\\windows\\system32\\gameux.dll",
     "c:\\windows\\syswow64\\gameux.dll"
   ],
-  "gamingservicesproxy_11.dll": [
-    "c:\\windows\\system32\\gamingservicesproxy_11.dll"
+  "gamingservicesproxy_13.dll": [
+    "c:\\windows\\system32\\gamingservicesproxy_13.dll"
   ],
   "gamingtcui.dll": [
     "c:\\windows\\system32\\gamingtcui.dll",
@@ -5111,6 +5127,9 @@
   "isoburn.exe": [
     "c:\\windows\\system32\\isoburn.exe",
     "c:\\windows\\syswow64\\isoburn.exe"
+  ],
+  "isoenvbroker.dll": [
+    "c:\\windows\\system32\\isoenvbroker.dll"
   ],
   "itircl.dll": [
     "c:\\windows\\system32\\itircl.dll",
@@ -6782,6 +6801,54 @@
     "c:\\windows\\system32\\mfc100u.dll",
     "c:\\windows\\syswow64\\mfc100u.dll"
   ],
+  "mfc110.dll": [
+    "c:\\windows\\system32\\mfc110.dll",
+    "c:\\windows\\syswow64\\mfc110.dll"
+  ],
+  "mfc110chs.dll": [
+    "c:\\windows\\system32\\mfc110chs.dll",
+    "c:\\windows\\syswow64\\mfc110chs.dll"
+  ],
+  "mfc110cht.dll": [
+    "c:\\windows\\system32\\mfc110cht.dll",
+    "c:\\windows\\syswow64\\mfc110cht.dll"
+  ],
+  "mfc110deu.dll": [
+    "c:\\windows\\system32\\mfc110deu.dll",
+    "c:\\windows\\syswow64\\mfc110deu.dll"
+  ],
+  "mfc110enu.dll": [
+    "c:\\windows\\system32\\mfc110enu.dll",
+    "c:\\windows\\syswow64\\mfc110enu.dll"
+  ],
+  "mfc110esn.dll": [
+    "c:\\windows\\system32\\mfc110esn.dll",
+    "c:\\windows\\syswow64\\mfc110esn.dll"
+  ],
+  "mfc110fra.dll": [
+    "c:\\windows\\system32\\mfc110fra.dll",
+    "c:\\windows\\syswow64\\mfc110fra.dll"
+  ],
+  "mfc110ita.dll": [
+    "c:\\windows\\system32\\mfc110ita.dll",
+    "c:\\windows\\syswow64\\mfc110ita.dll"
+  ],
+  "mfc110jpn.dll": [
+    "c:\\windows\\system32\\mfc110jpn.dll",
+    "c:\\windows\\syswow64\\mfc110jpn.dll"
+  ],
+  "mfc110kor.dll": [
+    "c:\\windows\\system32\\mfc110kor.dll",
+    "c:\\windows\\syswow64\\mfc110kor.dll"
+  ],
+  "mfc110rus.dll": [
+    "c:\\windows\\system32\\mfc110rus.dll",
+    "c:\\windows\\syswow64\\mfc110rus.dll"
+  ],
+  "mfc110u.dll": [
+    "c:\\windows\\system32\\mfc110u.dll",
+    "c:\\windows\\syswow64\\mfc110u.dll"
+  ],
   "mfc140.dll": [
     "c:\\windows\\system32\\mfc140.dll",
     "c:\\windows\\syswow64\\mfc140.dll"
@@ -6857,6 +6924,14 @@
   "mfcm100u.dll": [
     "c:\\windows\\system32\\mfcm100u.dll",
     "c:\\windows\\syswow64\\mfcm100u.dll"
+  ],
+  "mfcm110.dll": [
+    "c:\\windows\\system32\\mfcm110.dll",
+    "c:\\windows\\syswow64\\mfcm110.dll"
+  ],
+  "mfcm110u.dll": [
+    "c:\\windows\\system32\\mfcm110u.dll",
+    "c:\\windows\\syswow64\\mfcm110u.dll"
   ],
   "mfcm140.dll": [
     "c:\\windows\\system32\\mfcm140.dll",
@@ -7930,6 +8005,10 @@
     "c:\\windows\\system32\\msvcp100.dll",
     "c:\\windows\\syswow64\\msvcp100.dll"
   ],
+  "msvcp110.dll": [
+    "c:\\windows\\system32\\msvcp110.dll",
+    "c:\\windows\\syswow64\\msvcp110.dll"
+  ],
   "msvcp110_win.dll": [
     "c:\\windows\\system32\\msvcp110_win.dll",
     "c:\\windows\\syswow64\\msvcp110_win.dll"
@@ -7997,6 +8076,10 @@
   "msvcr100_clr0400.dll": [
     "c:\\windows\\system32\\msvcr100_clr0400.dll",
     "c:\\windows\\syswow64\\msvcr100_clr0400.dll"
+  ],
+  "msvcr110.dll": [
+    "c:\\windows\\system32\\msvcr110.dll",
+    "c:\\windows\\syswow64\\msvcr110.dll"
   ],
   "msvcr120_clr0400.dll": [
     "c:\\windows\\system32\\msvcr120_clr0400.dll",
@@ -9088,9 +9171,6 @@
   ],
   "penservice.dll": [
     "c:\\windows\\system32\\penservice.dll"
-  ],
-  "peopleactivityextension.dll": [
-    "c:\\windows\\system32\\peopleactivityextension.dll"
   ],
   "peopleapis.dll": [
     "c:\\windows\\system32\\peopleapis.dll",
@@ -12702,6 +12782,10 @@
   "vbssysprep.dll": [
     "c:\\windows\\system32\\vbssysprep.dll"
   ],
+  "vcamp110.dll": [
+    "c:\\windows\\system32\\vcamp110.dll",
+    "c:\\windows\\syswow64\\vcamp110.dll"
+  ],
   "vcamp140.dll": [
     "c:\\windows\\system32\\vcamp140.dll",
     "c:\\windows\\syswow64\\vcamp140.dll"
@@ -12714,6 +12798,10 @@
     "c:\\windows\\system32\\vcardparser.dll",
     "c:\\windows\\syswow64\\vcardparser.dll"
   ],
+  "vccorlib110.dll": [
+    "c:\\windows\\system32\\vccorlib110.dll",
+    "c:\\windows\\syswow64\\vccorlib110.dll"
+  ],
   "vccorlib140.dll": [
     "c:\\windows\\system32\\vccorlib140.dll",
     "c:\\windows\\syswow64\\vccorlib140.dll"
@@ -12725,6 +12813,10 @@
   "vcomp100.dll": [
     "c:\\windows\\system32\\vcomp100.dll",
     "c:\\windows\\syswow64\\vcomp100.dll"
+  ],
+  "vcomp110.dll": [
+    "c:\\windows\\system32\\vcomp110.dll",
+    "c:\\windows\\syswow64\\vcomp110.dll"
   ],
   "vcomp140.dll": [
     "c:\\windows\\system32\\vcomp140.dll",
@@ -14096,6 +14188,9 @@
   ],
   "windows.sharedpc.credentialprovider.dll": [
     "c:\\windows\\system32\\windows.sharedpc.credentialprovider.dll"
+  ],
+  "windows.shell.autodarkmode.dll": [
+    "c:\\windows\\system32\\windows.shell.autodarkmode.dll"
   ],
   "windows.shell.bluelightreduction.dll": [
     "c:\\windows\\system32\\windows.shell.bluelightreduction.dll"
@@ -17639,6 +17734,12 @@
   "sdstor.sys": [
     "c:\\windows\\system32\\drivers\\sdstor.sys"
   ],
+  "sepdal.sys": [
+    "c:\\windows\\system32\\drivers\\sepdal.sys"
+  ],
+  "sepdrv5.sys": [
+    "c:\\windows\\system32\\drivers\\sepdrv5.sys"
+  ],
   "sercx.sys": [
     "c:\\windows\\system32\\drivers\\sercx.sys"
   ],
@@ -17965,6 +18066,9 @@
   ],
   "vstxraid.sys": [
     "c:\\windows\\system32\\drivers\\vstxraid.sys"
+  ],
+  "vtss.sys": [
+    "c:\\windows\\system32\\drivers\\vtss.sys"
   ],
   "vwififlt.sys": [
     "c:\\windows\\system32\\drivers\\vwififlt.sys"
