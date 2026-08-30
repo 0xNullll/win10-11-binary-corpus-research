@@ -185,6 +185,21 @@ cython_debug/
 
 # Windows 10/11 corpus shared-output
 /shared-output/*
+!/shared-output/win10/
+/shared-output/win10/*
+!/shared-output/win10/10.0.19045/
+/shared-output/win10/10.0.19045/*
+!/shared-output/win10/10.0.19045/x64/
+/shared-output/win10/10.0.19045/x64/*
+!/shared-output/win10/10.0.19045/x64/hashes.json
+
+!/shared-output/win11/
+/shared-output/win11/*
+!/shared-output/win11/10.0.26200/
+/shared-output/win11/10.0.26200/*
+!/shared-output/win11/10.0.26200/x64/
+/shared-output/win11/10.0.26200/x64/*
+!/shared-output/win11/10.0.26200/x64/hashes.json
 
 # Corpus shared output schemas folder
 /schemas/

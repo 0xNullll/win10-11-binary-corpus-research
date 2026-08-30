@@ -1,8 +1,7 @@
 # AXIS Windows Binary Corpus — Tools & Data
 
-Supplementary tools and precomputed data accompanying a two-paper series on
-Windows 10/11 system binary analysis, both drawn from the same corpus and
-extraction pipeline:
+Supplementary tools accompanying a two-paper series on Windows 10/11 system
+binary analysis, both drawn from the same corpus and extraction pipeline:
 
 1. *"A Corpus-Scale Static Analysis of Windows 10/11 System Binaries:
    Characterization and Cross-Build Differences"* — corpus-scale statistics
@@ -13,15 +12,16 @@ extraction pipeline:
    Windows 10 cluster, field-level anomalies, and the `inpoutx64.sys` case
    study.
 
-This repo does **not** contain the full corpus. It contains:
+This repo does **not** contain the full corpus, nor any precomputed output.
+It contains:
 
 - the scripts used to generate and validate the analysis data (`scripts/`)
-- precomputed output for the two builds studied in both papers (`shared-output/`)
 - a pointer to the raw corpus, provided separately due to size (`corpus/`)
+- an empty `shared-output/` folder, populated by running the scripts against
+  the corpus
 
-Everything under `shared-output/` is reproducible from the corpus using the
-scripts in this repo — it's included so the results can be inspected without
-re-running the full pipeline.
+All results referenced in both papers are reproducible from the corpus using
+the scripts in this repo, with one exception noted below (`hashes.json`).
 
 ## Corpus
 
@@ -31,7 +31,7 @@ this repo:
 **[LINK TO CORPUS ARCHIVE, I SWEAR TO GOD IF U FORGET..]**
 
 The `corpus/` folder is a placeholder — extract the archive there (or point
-the scripts at wherever you extracted it) to reproduce `shared-output/` from
+the scripts at wherever you extracted it) to generate `shared-output/` from
 scratch.
 
 ## Repo structure
@@ -40,10 +40,16 @@ scratch.
 .
 ├── corpus/                     # placeholder — see "Corpus" above
 ├── scripts/                    # generation, validation, and tracing tools
-└── shared-output/              # precomputed results, one folder per OS build
+└── shared-output/              # populated by running the generator, one subfolder per OS build
     ├── win10/10.0.19045/x64/
     └── win11/10.0.26200/x64/
 ```
+
+
+
+The per-build subfolders and their JSON contents are not tracked by git —
+only the top-level `shared-output/` folder itself exists in the repo as a
+placeholder, mirroring `corpus/`.
 
 ## Scripts
 
@@ -51,8 +57,8 @@ scratch.
 |---|---|
 | `axis_binary_tool_python.py` | Main analysis script. Runs the core corpus analysis behind most of Paper 1's tables and statistics — imports, exports, security-relevant characteristics, signature status, and the Win10/Win11 comparison. Results are printed directly to the CLI. This is also the script whose RWX-permission check first surfaced `inpoutx64.sys` as an outlier, which became the central case study of Paper 2. Produces more than what made it into either paper — see it for extra characteristics/statistics not covered in the text. |
 | `axis_binary_tool_python_generator.py` | Interactive generator. Prompts for the Windows version/build/arch to target, then presents a menu (DLL dependency graph / export index / hash index / build all) and writes the corresponding JSON files to `shared-output/<os>/<build>/<arch>/`. No CLI flags — just run it and answer the prompts. |
-| `axis_binary_tool_python_validate_data.py` | Validates an already-generated `binary_paths.json` (no flags, no other input needed — reads it directly). Prints live progress and a summary (total checked / clean / flagged, plus the first 10 flagged entries) to the CLI, and writes the full validation report to JSON. Entries with no problems aren't included in the report. |
-| `axis_binary_tool_python_graph.py` | DLL dependency graph viewer. Run directly (no flags) — it opens an interactive dependency graph in a local web page. |
+| `axis_binary_tool_python_validate_data.py` | Validates a generated `binary_paths.json` (no flags, no other input needed — reads it directly). Prints live progress and a summary (total checked / clean / flagged, plus the first 10 flagged entries) to the CLI, and writes the full validation report to JSON. Entries with no problems aren't included in the report. |
+| `axis_binary_tool_python_graph.py` | DLL dependency graph viewer. Run directly (no flags) — it opens an interactive dependency graph in a local web page, built from your generated `dll_dependencies.json`. |
 | `axis_binary_tool_python_trace.py` | Function-level tracer — resolves and traces individual exported/imported functions across the corpus, outputting JSON. Run directly; usable standalone, independent of the graph viewer. |
 | `axis_binary_tool_python_graph2.py` | Function trace visualizer — consumes `trace.py` output. Run directly (no flags) — it opens an interactive graph in a local web page. `trace.py` is the backbone of this tool. |
 
@@ -65,7 +71,8 @@ pip install -r scripts/requirements.txt
 ### Running the scripts
 
 None of these scripts take CLI flags — run them directly and follow the
-prompts where applicable:
+prompts where applicable. You'll need the corpus extracted locally first
+(see "Corpus" above) before any of these produce output:
 
 ```bash
 python scripts/axis_binary_tool_python_generator.py
@@ -87,19 +94,23 @@ python scripts/axis_binary_tool_python_graph2.py
 ```
 
 **Note on hashing:** `hashes.json` (and `hashes_by_name.json`, where present)
-are only generated when the machine running the generator matches the
-Windows version the output folder is labeled for. Running the generator on a
-mismatched OS version will produce every other output file but skip hashing.
+can only be generated on a machine actually running the exact Windows
+version/build the output folder is labeled for — the script hashes the
+binaries directly off disk, so it needs the real files, not just corpus
+metadata. Running the generator on a mismatched OS version produces every
+other output file but skips hashing entirely. Unlike the rest of this
+pipeline's outputs, which are reproducible on any machine once you have the
+corpus, `hashes.json` is **not** reproducible unless you happen to be running
+that specific Windows 10/11 build yourself.
 
 ## Output files
 
-Each `shared-output/<os>/<build>/<arch>/` folder contains:
+Running the generator populates `shared-output/<os>/<build>/<arch>/` with:
 
 | File | Contents |
 |---|---|
 | `binary_paths.json` | Canonical paths of every binary included in this build's corpus subset. |
-| `hashes.json` | Per-binary hashes. Only generated when the host OS version matches the labeled build (see note above). |
-| `hashes_by_name.json` | Name-scoped hash index (win11 output only, as generated). |
+| `hashes.json` | Per-binary hashes. **Not reproducible on an arbitrary machine** — requires running the generator on a host that is itself the exact Windows version/build being hashed (see note above). |
 | `module_name_index.json` | Lookup index from module name to resolved binary entries. |
 | `dll_dependencies.json` | Resolved DLL dependency edges per binary. |
 | `dll_imported_by.json` | Reverse index of `dll_dependencies.json` — which binaries import a given DLL. |
@@ -113,8 +124,9 @@ For the exact structure of each of these, see `scripts/axis_binary_tool_generate
 ## JSON schemas
 
 `scripts/axis_binary_tool_generate_schemas.py` infers a JSON Schema for
-every file in `shared-output/` and writes one `<name>.schema.json` per
-input file to `schemas/`. No external dependencies. Run:
+every file in a `shared-output/` folder you've generated and writes one
+`<name>.schema.json` per input file to `schemas/`. No external dependencies.
+Run:
 
 ```bash
 python scripts/axis_binary_tool_generate_schemas.py --input shared-output --output schemas
@@ -142,7 +154,7 @@ file without hand-maintaining documentation as the pipeline evolves.
 
 ## A note on this repo
  
-Nothing here from scripts, output data, folder layout, README included — was
+Nothing here from scripts, folder layout, README included — was
 built to be a polished, general-purpose release. This is a research
 artifact: what was actually used to produce the data behind both papers,
 shared as-is for transparency and reproducibility. It was written and
