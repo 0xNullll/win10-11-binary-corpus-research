@@ -183,5 +183,8 @@ cython_debug/
 # Windows 10/11 corpus folder
 /corpus/*
 
+# Windows 10/11 corpus shared-output
+/shared-output/*
+
 # Corpus shared output schemas folder
 /schemas/
