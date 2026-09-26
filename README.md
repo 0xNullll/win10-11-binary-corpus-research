@@ -12,6 +12,16 @@ binary analysis, both drawn from the same corpus and extraction pipeline:
    Windows 10 cluster, field-level anomalies, and the `inpoutx64.sys` case
    study.
 
+## Papers
+
+Pre-print drafts of both papers are in [`papers/`](papers/). This is a
+temporary home: once each paper is submitted to and announced on arXiv,
+the PDFs here will be replaced with links to the arXiv entries, and this
+section will be removed. Until then, treat the PDFs in `papers/` as
+unpublished drafts, not final versions — content may still change.
+Licensing for the papers is noted inside that folder and is separate from
+this repo's MIT license (see License below).
+
 This repo does **not** contain the full corpus, nor any precomputed output.
 It contains:
 
@@ -19,30 +29,29 @@ It contains:
 - a pointer to the raw corpus, provided separately due to size (`corpus/`)
 - an empty `shared-output/` folder, populated by running the scripts against
   the corpus
+- pre-print drafts of both papers (`papers/`), temporary until arXiv publication
 
 All results referenced in both papers are reproducible from the corpus using
 the scripts in this repo, with one exception noted below (`hashes.json`).
 
 ## Corpus
 
-The raw binary corpus (~16GB, unzipped) will be hosted externally and linked here once the corpus archive is published.
+The raw binary corpus (~13.5GB, unzipped) will be hosted externally and linked here once the corpus archive is published.
 
 **Corpus archive:** *Link will be added upon publication.*
 
 The `corpus/` folder is a placeholder. Once the corpus is available, extract it there (or point the scripts at wherever you extracted it) to generate `shared-output/` from scratch.
 
 ## Repo structure
-
 ```
 .
-├── corpus/                     # placeholder — see "Corpus" above
-├── scripts/                    # generation, validation, and tracing tools
-└── shared-output/              # populated by running the generator, one subfolder per OS build
+├── corpus/               # placeholder — see "Corpus" above
+├── papers/               # pre-print drafts, temporary until arXiv publication
+├── scripts/              # generation, validation, and tracing tools
+└── shared-output/        # populated by running the generator, one subfolder per OS build
     ├── win10/10.0.19045/x64/
     └── win11/10.0.26200/x64/
 ```
-
-
 
 The per-build subfolders and their JSON contents are not tracked by git —
 only the top-level `shared-output/` folder itself exists in the repo as a
@@ -166,3 +175,4 @@ maintained tool.
 ## License
 
 Released under the **MIT License**. See [LICENSE](LICENSE) for full text.
+The papers in `papers/` are separately licensed — see that folder for details.
