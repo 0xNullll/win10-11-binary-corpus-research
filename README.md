@@ -25,14 +25,11 @@ the scripts in this repo, with one exception noted below (`hashes.json`).
 
 ## Corpus
 
-The raw binary corpus (~16GB, unzipped) is hosted externally rather than in
-this repo:
+The raw binary corpus (~16GB, unzipped) will be hosted externally and linked here once the corpus archive is published.
 
-**[LINK TO CORPUS ARCHIVE, I SWEAR TO GOD IF U FORGET..]**
+**Corpus archive:** *Link will be added upon publication.*
 
-The `corpus/` folder is a placeholder — extract the archive there (or point
-the scripts at wherever you extracted it) to generate `shared-output/` from
-scratch.
+The `corpus/` folder is a placeholder. Once the corpus is available, extract it there (or point the scripts at wherever you extracted it) to generate `shared-output/` from scratch.
 
 ## Repo structure
 
