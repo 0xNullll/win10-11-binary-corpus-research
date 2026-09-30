@@ -16,8 +16,8 @@ pipeline:
 
 | Artifact | Location |
 |---|---|
-| Paper one (preprint) | [Zenodo, DOI 10.5281/zenodo.23069220](https://zenodo.org/records/23069220) |
-| Paper two (preprint) | [Zenodo, DOI 10.5281/zenodo.23069474](https://zenodo.org/records/23069474) |
+| Paper one | [Zenodo, DOI 10.5281/zenodo.23069220](https://zenodo.org/records/23069220) |
+| Paper two | [Zenodo, DOI 10.5281/zenodo.23069474](https://zenodo.org/records/23069474) |
 | Corpus (derived JSON dataset) | [Zenodo, DOI 10.5281/zenodo.23067342](https://zenodo.org/records/23067342) |
 | Scripts | This repository |
 
